@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>t</short-name>
+	<uri>/das-tags</uri>
+	<display-name>"自定义标签"</display-name>
+	<!-- 数据字典下拉选项 -->
+	<tag>
+		<name>dictListTag</name>
+		<tag-class>com.gw.das.web.tag.DictListTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>数据字典下拉选项</display-name>
+		<description>数据字典下拉选项</description>
+		<attribute>
+			<name>dataList</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据列表</description>
+		</attribute>
+		<attribute>
+			<name>defaultVal</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>默认值</description>
+		</attribute>
+	</tag>
+	<!-- 枚举类型下拉选项 -->
+	<tag>
+		<name>enumListTag</name>
+		<tag-class>com.gw.das.web.tag.EnumListTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>枚举类型下拉选项</display-name>
+		<description>枚举类型下拉选项</description>
+		<attribute>
+			<name>dataList</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>数据列表</description>
+		</attribute>
+		<attribute>
+			<name>defaultVal</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>默认值</description>
+		</attribute>
+	</tag>
+	<!-- 格式手机号码，中间使用*号代替 -->
+	<tag>
+		<name>formatPhone</name>
+		<tag-class>com.gw.das.web.tag.FormatPhoneTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>格式手机号码控件</display-name>
+		<description>格式手机号码控件</description>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>待格式手机号码</description>
+		</attribute>
+	</tag>
+	<!-- 格式邮件地址，中间使用*号代替 -->
+	<tag>
+		<name>formatEmail</name>
+		<tag-class>com.gw.das.web.tag.FormatEmailTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>格式邮件地址控件</display-name>
+		<description>格式邮件地址控件</description>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>待格式邮件地址</description>
+		</attribute>
+	</tag>
+	<!-- 日期自定义标签 -->
+	<tag>
+		<name>date</name>
+		<tag-class>com.gw.das.web.tag.DateTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>日期自定义标签</display-name>
+		<description>日期自定义标签</description>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>输出日期类型</description>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>输出日期格式</description>
+		</attribute>
+	</tag>
+	<!-- 权限验证标签 -->
+	<tag>
+		<name>auth</name>
+		<tag-class>com.gw.das.web.tag.AuthTag</tag-class>
+		<body-content>empty</body-content>
+		<display-name>权限验证标签</display-name>
+		<description>权限验证标签</description>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>权限地址</description>
+		</attribute>
+	</tag>
+</taglib>

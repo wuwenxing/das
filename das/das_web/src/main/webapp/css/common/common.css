@@ -1,0 +1,63 @@
+/* @wayne : 公共样式 */
+@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+body {font-size: 12px;}
+ul, li{list-style: none;}
+textarea {width: 200px; height: 60px; resize: none; border-radius: 0px; border: 1px solid #D0D0D0; background: #fff; vertical-align: middle;}
+
+a:link, a:visited{text-decoration: none;}
+a {
+/* 	color: #00A0E9;  */
+	text-decoration: none; cursor: pointer;}
+a:hover {
+/* 	color: #00A0E9;  */
+	text-decoration: underline; background-repeat: no-repeat;
+}
+
+div.spanRed, span.spanRed{color: red;}
+
+div.searchTitle{color:#575765; font-weight: bold; height:27px; line-height: 27px; border: 0px; 
+	border-bottom: 1px solid #B99E63; padding-left:30px; 
+	background:url('../../img/icons/searchForm.png') no-repeat #FCF8E7 10px center;
+	margin-left: -2px;
+    margin-right: -2px;
+    margin-top: -1px;; 
+}
+div.resultTitle{color:#575765; font-weight: bold; height:27px; line-height: 27px; border: 0px; 
+	border-top: 1px solid #B99E63; padding-left:30px; 
+	background:url('../../img/icons/list.png') no-repeat #FCF8E7 10px center;
+	margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: -1px;
+}
+div.resultButton{color:#575765;
+	height:27px; line-height: 27px; border: 0px; 
+	border-top: 1px solid #B99E63; padding-left:5px; 
+	background:#FCF8E7;
+	margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: -1px;
+}
+div.searchButton{text-align: right;}
+
+form.searchForm{padding: 5px; background-color: #FFF;}
+form.commonForm{padding: 5px;}
+
+table.commonTable{text-align: left; font-size: 12px; width: 100%; border: none; border-collapse:collapse; border-spacing:0; line-height: 25px;}
+table.commonTable tr {border: 1px solid #B99E63; border-left: 0px; border-right: 0px;}
+table.commonTable th {width: 100px; font-weight: normal; border: 1px solid #B99E63; padding-left: 5px; background-color: #FCF8E7;}
+table.commonTable td {border: 1px solid #B99E63; padding: 1px; padding-left: 2px; padding-right: 10px; vertical-align: middle;}
+table.commonTable input {vertical-align: middle;}
+table.commonTable input[type="text"],
+table.commonTable input[type="password"] {
+	width: 156px; height: 24px; line-height: 24px; border-radius: 0px; border: 1px solid #D0D0D0;
+}
+table.commonTable input[disabled=disabled], table textarea[disabled=disabled] {background: #f0f0f0;}
+/* table.commonTable input[readonly=readonly], table textarea[readonly=readonly] {background: #FCF8E7;} */
+.textbox {
+    border: 1px solid #D0D0D0;
+}

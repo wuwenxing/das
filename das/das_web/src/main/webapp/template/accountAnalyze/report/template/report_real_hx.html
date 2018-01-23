@@ -1,0 +1,415 @@
+<table border="0" cellpadding="0" cellspacing="0" width="1000" style="background-color: #6462e1;">
+<tr>
+<td style="height: 90px; background-color: #fff;">
+<div style="padding: 10px 0 26px 0; margin: 0 auto;">
+<table width="1000" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<a href="http://www.hx9999.com"><img
+src="http://dmpfile.gwghk.com/images/hx-logo.png"></a>
+</td>
+<td style="text-align: right">
+<img src="http://dmpfile.gwghk.com/images/hx-right.png" width="299" height="49" usemap="#planetmap3"/>
+<map name="planetmap3">
+<area shape="Rect" coords="0,0,147,47"
+href="http://wpa.b.qq.com/cgi/wpa.php?ln=2&uin=800025790"/>
+<area shape="Rect" coords="154,0,299,47"
+href="https://myid.hx9999.com/cn/ucenter/ucenter_login.html"/>
+</map>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="1000" align="center">
+<tr>
+<td style="background: url('http://dmpfile.gwghk.com/images/hx-banner.jpg') #6462e1 no-repeat bottom;width: 1000px; height: 388px;padding: 0 58px; position: relative">
+<div>
+<div style="font-size: 60px; color: #fff;">
+<div style="letter-spacing: 8px;line-height: 1.2;">交易诊断</div>
+<div style="padding-bottom: 35px;border-bottom: 1px solid #fff;margin-bottom: 10px;display: inline-block;">
+报告
+</div>
+</div>
+<div style="font-size: 24px;color: #ffe100;"><span>Trading Diagnosis</span><span style="color: #fff">Report</span></div>
+</div>
+<a href="https://handan.hx9999.com/" style="display: inline-block; width: 125px; height: 144px; position: absolute; top: 56px; right: 60px;"></a>
+</td>
+</tr>
+<tr>
+<td>
+<table style="margin: 0 auto;background: #fafafa;" border="0" cellpadding="0" cellspacing="0"
+width="960">
+<tr>
+<td style="font-size:36px;color:#424c5c;text-align:center;padding:60px 0 30px 0;">账户概况</td>
+</tr>
+<tr>
+<td>
+<table style="font-size: 12px;" align="center" border="0" cellpadding="0"
+cellspacing="0">
+<tr>
+<td colspan="4"
+style="background-color: #fc5d3e;padding: 0 20px;line-height: 60px;font-size: 20px;color: #fff;">
+<span>账号：</span>
+<span style="margin: 0 10px;">${accountNo}</span>
+<span>诊断期(GMT+8)：</span>
+<span style="margin: 0 10px;">${startDate}至${endDate}</span>
+</td>
+</tr>
+<#if accountOverviewMap?? && (accountOverviewMap?size > 0)>
+<tr>
+<td width="20%" style="background-color:#f4f5fa;text-align: center;">
+操作次数
+</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['tradesnumber'])!''}
+</td>
+<td width="20%" style="background-color:#f4f5fa;text-align: center;">
+平仓总盈利
+</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['totalprofit'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">盈利次数</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['profitnumber'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">平仓总亏损</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['totalloss'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">亏损次数</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['lossnumber'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">平仓盈亏</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['closeprofit'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">过夜利息</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['swap'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">实际盈亏(盈亏+过夜利息)
+</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['actualprofit'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">强平次数</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['strongnumber'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">强平亏损</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['strongflatloss'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">平均盈亏比（注）</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['avgprofitlossratio'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">胜率</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['winrate'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">最大盈亏比（注）</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['maxprofitratio'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">出入金金额（净入金）</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['netdeposit'])!''}
+</td>
+</tr>
+<tr>
+<td style="background-color:#f4f5fa;text-align: center;">统计段截止浮动盈亏</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['floatingprofit'])!''}
+</td>
+<td style="background-color:#f4f5fa;text-align: center;">交易盈亏比（注）</td>
+<td style="border-bottom:1px solid #f4f5fa;width:240px;height:59px;padding-left:15px;">
+${(accountOverviewMap['tradeprofitratio'])!''}
+</td>
+</tr>
+</#if>
+<tr>
+<td colspan="4"
+style="color: rgba(66, 76, 92, 0.41);line-height: 1.5;padding: 20px 0;">
+平均盈亏比=平均每笔盈利金额/平均每笔亏损金额<br/>最大盈亏比=最大三笔盈利交易金额/最大亏损三笔亏损交易金额<br/>交易盈亏比=盈利金额/亏损金额
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center"><img src="http://dmpfile.gwghk.com/report/${batchNo}/${fileName}_01.png">
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center"><img src="http://dmpfile.gwghk.com/report/${batchNo}/${fileName}_02.png">
+</td>
+</tr>
+<tr>
+<td colspan="4"
+style="font-size:36px;color:#424c5c;text-align:center;padding:30px 0;">
+收益统计
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center"><img src="http://dmpfile.gwghk.com/report/${batchNo}/${fileName}_03.png">
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center"><img src="http://dmpfile.gwghk.com/report/${batchNo}/${fileName}_04.png">
+</td>
+</tr>
+<tr>
+<td colspan="4"
+style="font-size:36px;color:#424c5c;text-align:center;padding:30px 0;">
+交易仓位
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center"><img src="http://dmpfile.gwghk.com/report/${batchNo}/${fileName}_05.png">
+</td>
+</tr>
+<tr>
+<td colspan="4"
+style="font-size:36px;color:#424c5c;text-align:center;padding:30px 0;">
+持仓时间·盈亏散点图
+</td>
+</tr>
+<tr>
+<td colspan="4" align="center"><img src="http://dmpfile.gwghk.com/report/${batchNo}/${fileName}_06.png">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="font-size:36px;color:#424c5c;text-align:center;padding:30px 0;">
+个别交易分析
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<table border="0" cellpadding="0" cellspacing="0" width="920" align="center"
+style="word-break: break-all;margin-bottom: 50px; color:#424c5c; text-align: center;">
+<tr>
+<td colspan="10">
+<div style="border-left:8px solid #ff8b1a;height:46px;line-height:44px;margin-bottom:30px;margin-left:60px;">
+<span style="font-size:22px;color:#a37357;padding-left:24px;">最大三笔盈利交易</span>
+</div>
+</td>
+</tr>
+<tr style="background:#fd4920; color:#fff; line-height: 54px;">
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+开仓时间
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+交易方向
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+交易产品
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+手数
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+开仓价格
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+平仓时间
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+平仓价格
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+利息
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+盈亏
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+类型
+</th>
+</tr>
+<#if accountTopProfitLossList?? && (accountTopProfitLossList?size > 0)>
+<#foreach vo in accountTopProfitLossList>
+<tr>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['opentime'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+<#if vo?? && vo['direction']??>
+<#if (vo['direction']) == 1>
+    买
+    <#elseif (vo['direction']) == 2>
+        卖
+        <#else>
+</#if>
+</#if>
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['symbolshortname'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['volume'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['openprice'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['closetime'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['closeprice'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['swap'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['jyk'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['reason'])!''}
+</td>
+</tr>
+</#foreach>
+<#else>
+<tr>
+<td colspan="10">暂无数据</td>
+</tr>
+</#if>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="920" align="center"
+style="word-break:break-all;margin-bottom:50px; color:#424c5c; text-align: center;">
+<tr>
+<td colspan="10">
+<div style="border-left:8px solid #ff8b1a;height:46px;line-height:44px;margin-bottom:30px;margin-left:60px;">
+<span style="font-size:22px;color:#a37357;padding-left:24px;">最大三笔亏损交易</span>
+</div>
+</td>
+</tr>
+<tr style="background:#fd4920; color:#fff; line-height: 54px;">
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+开仓时间
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+交易方向
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+交易产品
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+手数
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+开仓价格
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+平仓时间
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+平仓价格
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+利息
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+盈亏
+</th>
+<th style="border-left:0;border-bottom:1px solid #fd4920;border-right:1px solid #fff;font-weight:100">
+类型
+</th>
+</tr>
+<#if accountTopLossList?? && (accountTopLossList?size > 0)>
+<#foreach vo in accountTopLossList>
+<tr>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['opentime'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+<#if vo?? && vo['direction']??>
+<#if (vo['direction']) == 1>
+买
+<#elseif (vo['direction']) == 2>
+    卖
+    <#else>
+</#if>
+</#if>
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['symbolshortname'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['volume'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['openprice'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['closetime'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['closeprice'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['swap'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['jyk'])!''}
+</td>
+<td style="border-right:1px solid #ebeef6;border-bottom:1px solid #ebeef6;line-height: 55px;">
+${(vo['reason'])!''}
+</td>
+</tr>
+</#foreach>
+<#else>
+<tr>
+<td colspan="10">暂无数据</td>
+</tr>
+</#if>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td style="color:#fff; padding: 20px;">
+<div style="font-size:30px;line-height:50px;"><span>账户诊断</span><span
+style="color:#a37357;">阅读指引</span></div>
+<div style="font-size:16px;line-height:30px;">主要指标：<br>胜率：一般情况下评判客户对市场走势判断的准确度，客户对市场的敏感程度。<br>平均盈亏比：评价客户的操作水平，对盈利、亏损、风险的管控。优秀操作客户会把平均盈亏比保持在一个较高的水平。<br>最大盈亏比：判断客户的极端亏损单是否对整体交易造成明显影响。
+<br>持仓保证金水平走势图：判断客户仓位水平的控制。<br>持仓时间-盈亏散点图：判断客户是否存在“扛单”的现象。
+</div>
+<div style="font-size: 14px; line-height: 1.5; margin-top: 10px;">从阁下进入本网站的一刻开始，阁下即受到以下使用条款的法律约束。网址所载的资料及任何意见，并不代表本集团以主理人或经办人身份邀请或提请任何人士购买或沽售任何债券、期货、期权或其他金融工具，或提供任何投资意见或服务。本公司或恒信贵金属有限公司（“恒信集团”）成员公司不确保文章涉及的资讯或意见适合个别投资者。</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>

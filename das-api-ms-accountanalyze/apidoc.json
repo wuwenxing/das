@@ -1,0 +1,11 @@
+{ 
+  "name": "账户诊断报告API", 
+  "version": "0.0.1",
+  "description": "此项目用于为账户诊断API来访问数据库。<br/>账户诊断真实场地址: http://192.168.9.167:9998 <br/>账户诊断uat地址:http://192.168.35.231:9998 <br/>获取token的uat地址:http://192.168.35.81/apidoc/sac/#api-sac ",
+  "sampleUrl":"http://192.168.35.231:9998",
+  "apidoc": 
+    {
+      "title": "账户诊断", 
+      "url" : "https://api.github.com/v1" 
+    }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="das_api"
+  id="myeclipse.1472782686820"
+  context-root="/das_api"
+  j2ee-spec="1.7"
+  archive="das_api.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

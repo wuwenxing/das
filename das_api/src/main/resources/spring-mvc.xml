@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd" default-autowire="byName">
+
+	<!-- 扫描注解Bean -->
+	<context:component-scan base-package="com.gw.das.web" />
+	
+	<!-- 用注解方式注入bean -->
+	<context:annotation-config />
+	
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+	<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+				<value>application/json; charset=UTF-8</value>
+				<value>application/x-www-form-urlencoded; charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 开启注解 -->
+	<!-- 主要作用于@Controller，激活该模式 下面是一种简写形式，完全可以手动配置替代这种简写形式； 
+		它会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter两个bean,
+		 是spring MVC为@Controllers分发请求所必须的 -->
+	<mvc:annotation-driven/>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<!-- <value>text/plain;charset=UTF-8</value> -->
+							<value>text/html;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 静态资源映射 -->
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/img/**" location="/img/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/jsp/**" location="/jsp/" />
+	<mvc:resources mapping="/third/**" location="/third/" />
+	
+	<!-- spring mvc 拦截器配置 -->
+	
+	<!-- 默认设置locale -->
+	<bean class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+  	 	<property name="defaultLocale" value="zh_CN"></property>
+ 	</bean>
+	<!-- 其中basename指出了资源文件的位置  -->
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>messages</value>
+            </list>
+        </property>
+    </bean>
+ 	
+	<!-- 定义视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="contentType" value="text/html" />
+		<property name="prefix" value="/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- spring mvc 全局异常配置 start -->
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">errors/error</prop>
+				<prop key="java.lang.Throwable">errors/err</prop>
+			</props>
+		</property>
+		<property name="statusCodes">
+			<props>
+				<prop key="errors/error">500</prop>
+				<prop key="errors/404">404</prop>
+			</props>
+		</property>
+		<!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+		<property name="warnLogCategory" value="WARN"></property>
+		<!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+		<property name="defaultErrorView" value="errors/error"></property>
+		<!-- 默认HTTP状态码 -->
+		<property name="defaultStatusCode" value="500"></property>
+	</bean>
+	<!-- spring mvc 全局异常配置 end -->
+	
+	
+	<!--上传文件支持-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="UTF-8"></property>   
+        <!--1024*1024即1Mb，单位字节-->
+        <property name="maxUploadSize" value="1048576"></property>  
+        <property name="maxInMemorySize" value="1048576"></property> 
+        <!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction中捕获文件大小异常-->
+        <property name="resolveLazily" value="true"/> 
+  	</bean>
+	
+</beans>

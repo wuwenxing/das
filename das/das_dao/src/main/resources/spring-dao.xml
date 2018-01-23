@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/data/jpa
+	http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
+	default-autowire="byName">
+
+	<!-- 扫描注解Bean -->
+	<context:component-scan base-package="com.gw.das.dao" />
+
+	<!-- 属性配置文件加载 -->
+	<context:property-placeholder location="classpath:database.properties" />
+
+	<!-- 配置数据源 -->
+	<!-- destroy-method=close的作用是当数据库连接不使用的时候,就把该连接重新放到数据池中,方便下次使用调用 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<!-- 当连接池中的连接用完时，C3P0一次性创建新连接的数目。Default: 3 -->
+		<property name="acquireIncrement" value="3"></property>
+		<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+		<property name="acquireRetryAttempts" value="30"></property>
+		<!--两次连接中间隔时间，单位毫秒。Default: 1000 -->
+		<property name="acquireRetryDelay" value="1000"></property>
+		<!--连接关闭时默认将所有未提交的操作回滚。Default: false -->
+		<property name="autoCommitOnClose" value="false"></property>
+		<!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效 保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试 
+			获取连接失败后该数据源将申明已断开并永久关闭。Default: false -->
+		<property name="breakAfterAcquireFailure" value="false"></property>
+		<!--当连接池用完时客户端调用getConnection()后等待获取新连接的时间，超时后将抛出 SQLException,如设为0则无限期等待。单位毫秒。Default:0 -->
+		<property name="checkoutTimeout" value="5000"></property>
+		<!-- 初始化时创建的连接数，必须在minPoolSize和maxPoolSize之间 -->
+		<property name="initialPoolSize" value="6"></property>
+		<!-- 连接池中保留的最小连接数 -->
+		<property name="minPoolSize" value="3"></property>
+		<!-- 连接池中保留的最大连接数 -->
+		<property name="maxPoolSize" value="50"></property>
+		<!-- 最大空闲时间,300秒内未使用则连接被丢弃。若为0则永不丢弃。 -->
+		<property name="maxIdleTime" value="300"></property>
+		<!-- 每60秒检查连接池中的空闲连接 -->
+		<property name="idleConnectionTestPeriod" value="60"></property>
+		<!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements
+			属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。
+			如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->
+		<property name="maxStatements" value="100"></property>
+		<!--因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的
+			时候都将校验其有效性。建议使用idleConnectionTestPeriod或automaticTestTable
+			等方法来提升连接测试的性能。Default: false -->
+		<property name="testConnectionOnCheckout" value="false"></property>
+		<!--如果设为true那么在取得连接的同时将校验连接的有效性。Default: false -->
+		<property name="testConnectionOnCheckin" value="false"></property>
+	</bean>
+
+	<!-- 与hibernate集成,配置SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="com.gw.das.*"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddlAuto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.showSql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.formatSql}</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 开启AOP监听 只对当前配置文件有效 -->
+	<aop:aspectj-autoproxy expose-proxy="true" />
+
+	<!-- 开启注解事务 只对当前配置文件有效 -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<!-- 给事务注入sessionFactory属性 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 事务属性配置 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<!-- 方法对应的传播属性 -->
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="import*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="merge*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="put*" propagation="REQUIRED" />
+			<tx:method name="use*" propagation="REQUIRED" />
+			<tx:method name="sync*" propagation="REQUIRED" />
+			<tx:method name="send*" propagation="REQUIRED" />
+			<tx:method name="reSend*" propagation="REQUIRED" />
+			<tx:method name="reset*" propagation="REQUIRED" />
+			<!--hibernate4必须配置为开启事务 否则 getCurrentSession()获取不到 -->
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="count*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="list*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="check*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 事务控制位置，一般在业务层service -->
+	<aop:config>
+		<aop:pointcut id="txPointcut"
+			expression="execution(* com.gw..service..*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+	</aop:config>
+
+</beans>

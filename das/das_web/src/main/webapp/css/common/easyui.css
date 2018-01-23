@@ -1,0 +1,158 @@
+/* @wayne : easyui-对应样式重写或新增 */
+@charset "utf-8";
+.icon-add{
+	background:url('../../img/icons/add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('../../img/icons/edit.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('../../img/icons/remove.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('../../img/icons/reload.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('../../img/icons/refresh.png') no-repeat center center;
+}
+.icon-export{
+	background:url('../../img/icons/export.png') no-repeat center center;
+}
+.icon-upload{
+	background:url('../../img/icons/upload.png') no-repeat center center;
+}
+.icon-download{
+	background:url('../../img/icons/download.png') no-repeat center center;
+}
+.icon-view{
+	background:url('../../img/icons/view.png') no-repeat center center;
+}
+.icon-empty{
+	background:url('../../img/icons/empty.png') no-repeat center center;
+}
+.icon-list{
+	background:url('../../img/icons/list.png') no-repeat center center;
+}
+.icon-grant{
+	background:url('../../img/icons/grant.png') no-repeat center center;
+}
+.icon-menu{
+	background:url('../../img/icons/menu.png') no-repeat center center;
+}
+.icon-search{
+	background:url('../../img/icons/search.png') no-repeat center center;
+}
+.icon-searchForm{
+	background:url('../../img/icons/searchForm.png') no-repeat center center;
+}
+.icon-folder{
+	background:url('../../img/icons/folder.png') no-repeat center center;
+}
+.accordion-header-selected .icon-folder{
+	background:url('../../img/icons/folder_over.png') no-repeat center center;
+}
+.tree-folder{
+	background: url('../../img/icons/tree_folder.gif') no-repeat center center;
+}
+.tree-folder-open{
+	background: url('../../img/icons/tree_folder_open.gif') no-repeat center center;
+}
+.tree-file {
+	background: url('../../img/icons/tree_file.gif') no-repeat center center;
+}
+
+/* .accordion-collapse { */
+/*     background: url('../../img/icons/accordion_up.png') no-repeat center center; */
+/* } */
+/* .accordion-expand { */
+/*     background: url('../../img/icons/accordion_down.png') no-repeat center center; */
+/* } */
+/* .layout-button-left { */
+/*     background: url('../../img/icons/accordion_down.png') no-repeat center center; */
+/*     -moz-transform: rotate(90deg); */
+/*     -webkit-transform: rotate(90deg); */
+/* } */
+/* .layout-button-right { */
+/*     background: url('../../img/icons/accordion_down.png') no-repeat center center; */
+/*     -moz-transform: rotate(-90deg); */
+/*     -webkit-transform: rotate(-90deg); */
+/* } */
+
+#menuAccordion .tree-node {
+    height: 20px;
+    line-height: 20px;
+    padding-top: 2px;
+}
+
+/**easyui-combobox 宽度设置*/
+.easyui-combobox {
+	width: 156px;
+	height: 25px;
+}
+
+.accordion .accordion-header {
+/*     background: #FCF8E7; */
+	background: #F2E9C5 url('../../img/icons/datagrid_header_bg.png') repeat-x left 0;
+}
+.accordion .accordion-header-selected {
+/*     background: #FCF8E7; */
+	background: #F2E9C5 url('../../img/icons/datagrid_header_bg.png') repeat-x left 0;
+}
+
+.panel-header {
+/*     background-color: #FCF8E7; */
+	background: #F2E9C5 url('../../img/icons/datagrid_header_bg.png') repeat-x left 0;
+}
+
+.window {
+/*     background-color: #f0e3bf; */
+	background: #F2E9C5 url('../../img/icons/datagrid_header_bg.png') repeat-x left 0;
+}
+
+.panel-body {
+  	background-color: #FFF;
+}
+
+.tabs-header, .tabs-tool {
+    background-color: #FFF;
+}
+
+.tabs li a.tabs-inner {
+    background-color: #FFF;
+}
+.tabs li.tabs-selected a.tabs-inner {
+   background-color: #FCF8E7;
+}
+
+.datagrid-header, .datagrid-toolbar, .datagrid-pager, .datagrid-footer-inner {
+    border-color: #B99E63;
+    background: #F2E9C5 url('../../img/icons/datagrid_header_bg.png') repeat-x left 0;
+}
+.datagrid-header, .datagrid-td-rownumber {
+/*     background-color: #FCF8E7; */
+	background: #F2E9C5 url('../../img/icons/datagrid_header_bg.png') repeat-x left 0;
+}
+.l-btn,
+.l-btn-disabled:hover {
+  color: #404040;
+}
+
+/* .datagrid-row-selected { */
+/*   background: #F1F1F1; */
+/* } */
+/* .datagrid-row-over, */
+/* .datagrid-header td.datagrid-header-over { */
+/*   background: #FCF8E7; */
+/* } */
+/* .tree-node-hover { */
+/*   background: #fff7d6; */
+/* } */
+/* .tree-node-selected { */
+/*   background: #f0e3bf; */
+/* } */
+
+/**easyui-datagrid 文字自动换行*/
+table.datagrid-btable tr.datagrid-row td div.datagrid-cell{
+	word-break: break-all;
+	word-wrap: break-word;
+}

@@ -1,0 +1,204 @@
+/* @wayne : 公共样式 */
+@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+
+body {font-size: 12px;}
+.indexBody{
+	background:url(../../img/icons/overview_bg.png) repeat-y 0 0 #fff;
+    min-width: 900px;
+}
+ul, li{list-style: none;}
+textarea {width: 200px; height: 60px; resize: none; border-radius: 0px;
+	border: 1px solid #D0D0D0;
+	background: #fff;
+	vertical-align: middle;
+}
+
+a:link, a:visited{text-decoration: none;}
+a {
+	color: #00A0E9;
+	text-decoration: none; cursor: pointer;}
+a:hover {
+	color: #00A0E9;
+	text-decoration: none; background-repeat: no-repeat;
+}
+
+div.spanRed, span.spanRed{color: red;}
+div.tipText{color: red; line-height: 24px;}
+div.divTitle{color:#777; font-weight: bold; font-size: 15px;
+	height:24px; line-height: 24px;
+	border: 0px;
+	background-color: #F5F5F5;
+	padding: 8px 10px 8px;
+	position:relative;
+    border-bottom: 1px solid #E9EDF1;
+}
+div.divTitle .easyui-linkbutton{
+	position:absolute;top:10px;right:15px;
+}
+div.divContent{
+	padding:20px 20px 20px;
+}
+div.divTitle2{
+	-webkit-box-shadow:0 0 10px rgba(105, 105, 105, .7);  
+  -moz-box-shadow:0 0 10px rgba(105, 105, 105, .7);  
+  box-shadow:0 0 10px rgba(105, 105, 105, .7);  
+}
+
+div.searchTitle{color:black; font-weight: bold;
+	height:24px; line-height: 24px;
+	border: 0px; 
+	border-bottom: 0px solid #D4D4D4;
+	padding: 1px;
+	padding-left:30px;
+	background:url('../../img/icons/searchForm.png') no-repeat 10px center;
+	background-color: #FFF;
+}
+div.resultTitle{color:black; font-weight: bold;
+	height:24px; line-height: 24px;
+	border: 0px; 
+	border-top: 0px solid #D4D4D4;
+	padding: 1px;
+	padding-left:30px; 
+	background:url('../../img/icons/list.png') no-repeat 10px center;
+	background-color: #FFF;
+}
+div.resultButton{color:black;
+	height:24px; line-height: 24px;
+	border: 0px; 
+	border-top: 1px solid #D4D4D4;
+	padding: 1px;
+    padding-bottom: 2px;
+}
+div.searchButton{text-align: right;}
+
+form.searchForm{
+	background-color: #FFF;
+}
+form.commonForm{padding: 2px;}
+
+table.commonTable{
+	text-align: left; font-size: 12px; width: 100%;
+	border: 1px solid #D4D4D4;
+	border-collapse:collapse; border-spacing:0;
+	line-height: 24px;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+table.commonTable tr {
+	border: 1px solid #D4D4D4;
+	border-left: 0px; border-right: 0px;}
+table.commonTable th {width: 100px; font-weight: normal;
+	border: 1px solid #D4D4D4;
+	padding-left: 5px; 
+}
+table.commonTable td {
+	border: 1px solid #D4D4D4;
+ 	padding: 2px;
+ 	padding-left: 3px; padding-right: 10px; vertical-align: middle;}
+table.commonTable input {vertical-align: middle;}
+table.commonTable input[type="text"],
+table.commonTable input[type="password"] {
+	width: 156px; height: 24px; line-height: 24px; border-radius: 0px; border: 1px solid #D0D0D0;
+}
+table.commonTable input[disabled=disabled], table textarea[disabled=disabled] {background: #f0f0f0;}
+table textarea{margin-top: 3px;margin-bottom: 3px;}
+.textbox {
+    border: 1px solid #D0D0D0;
+}
+table.commonTable .more{
+	display: none;
+}
+
+
+/* 设定宽度,并去掉外边框 */
+table.commonTable.width_BFB_25 td{
+	width: 25%;
+}
+table.commonTableWidth_BFB_25 {
+	text-align: left; font-size: 12px; width: 100%;
+	line-height: 24px;
+	border-collapse: collapse;
+	border: 0px solid #D4D4D4;
+}
+table.commonTableWidth_BFB_25 td {
+	border-top: 0;
+	border-right: 1px solid #D4D4D4;
+	border-bottom: 1px solid #D4D4D4;
+	border-left: 0;
+	font-weight: normal;
+	width: 25%;
+	vertical-align: middle;
+	padding-left: 4px;
+}
+table.commonTableWidth_BFB_25 th {
+	border-top: 0;
+	border-right: 1px solid #D4D4D4;
+	border-bottom: 1px solid #D4D4D4;
+	border-left: 0;
+	font-weight: normal;
+	width: 25%;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+table.commonTableWidth_BFB_25 tr:last-child td {
+	border-bottom: 0;
+}
+table.commonTableWidth_BFB_25 tr:last-child th {
+	border-bottom: 0;
+}
+table.commonTableWidth_BFB_25 tr td:last-child {
+	border-right: 0;
+}
+/* 设定宽度,并去掉外边框-end */
+
+
+.nav{
+        position: absolute;
+        left: 220px;
+    }
+    .nav>ul>li{
+        float: left;
+        font:16px/53px 'microsoft yahei';
+        padding: 0 8px;
+        margin-right: 40px;   
+    }
+    .nav>ul>li>a{
+        color: #fff;
+        text-decoration: none;!important
+    }
+    .nav>ul>li:hover{
+        height: 50px;
+        border-bottom: 2px solid #fff;
+    }
+    .nav>ul>li:active{
+        height: 53px;
+        border-bottom: 2px solid #F5F5F5;
+        background-color: #F5F5F5;
+    }
+    .nav>ul>li:active a{
+        color: #1C3B69;
+    }
+
+/* new 2017.2.8 */
+.common-box-style{
+	margin-top:20px; border: 1px solid #E9EDF1;
+	background-color: #fff;
+	border-radius:4px;
+	box-shadow:0 0 8px #eee;
+}
+
+.section {
+    color: #263238;
+    font-weight: bold;
+    padding: 15px 5px;
+    border-bottom: 1px solid #8ed30f;
+}
+.section>span {
+    display: block;
+    padding-left: 10px;
+    border-left: 5px solid #8ed30f;
+}

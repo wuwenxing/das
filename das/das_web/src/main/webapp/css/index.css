@@ -1,0 +1,74 @@
+/* @wayne : 首页样式 */
+@charset "utf-8";
+.topDiv {
+	height: 53px;
+}
+.topDiv .logo-container{position: relative; float: left; background: url(../img/logo.png); width: 406px; height: 53px;}
+.topDiv .text-container{float: right; height: 53px; background-color: #FFF;}
+.topDiv .text-container .welcome-box-left{
+	float: left;
+	height: 32px; width: 30px;
+	background: url('../img/top_inf_bg.png') top left no-repeat;
+}
+.topDiv .text-container .welcome-box-right{
+	float:right;
+	text-align: right; 
+	height: 32px; padding-right: 10px;
+	background: url('../img/top_inf_bg2.png') top right repeat-x;
+}
+.topDiv .text-container .welcome-box-right .imgBox{
+	vertical-align: middle;
+}
+
+.icon-home {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') -70px 0px no-repeat;
+}
+.icon-loginOut {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') 0px 0px no-repeat;
+}
+.icon-changePassword {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') -35px 0px no-repeat;
+}
+.icon-changePassword {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') -35px 0px no-repeat;
+}
+.icon-help {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') -105px 0px no-repeat;
+}
+.icon-about {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') -175px 0px no-repeat;
+}
+.icon-problem {
+    width: 27px;
+    height: 25px;
+    margin-left: -5px;
+    margin-top: -13px;
+    background: url('../img/icons/menu_icon.png') -140px 0px no-repeat;
+}
+
+
+

@@ -1,0 +1,373 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="../../common/common.jsp"%>
+<script type="text/javascript"
+	src="<%=basePath%>page/market/flowConfig/flowConfig.js?version=20170306"></script>
+</head>
+<body>
+
+<div class="common-box-style">
+	<div class="divTitle">流量通道设置</div>
+	<div class="divContent">
+		<form id="saveDlogForm" class="commonForm" method="post">
+			<table class="commonTable">
+				<tr>
+					<th>流量通道：</th>
+					<td>
+						<select id="flowChannel" name="flowChannel" class="easyui-combobox" data-options="required:true, panelHeight:'auto', editable:false">
+							<c:forEach var="record" items="${flowChannelList}">
+								<option value="${record.labelKey}"
+									${flowChannel.flowChannel eq record.labelKey?"selected":""}>${record.value}</option>
+							</c:forEach>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="8">
+						<div class="searchButton">
+							<a href="javascript:void(0);" class="easyui-linkbutton"
+								onclick="flowConfig.save();"
+								data-options="iconCls:'icon-ok', plain:'true'">保存</a>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+
+<div class="common-box-style" style="width: 450px; float: left; height: 855px;">
+	<div class="divTitle">亿美流量套餐详情</div>
+	<div class="divContent">
+		<table class="commonTable" style="width: 400px;">
+			<tr>
+				<td>套餐编号</td>
+				<td>流量</td>
+				<td>套餐类型</td>
+				<td>运营商</td>
+				<td>价格(元)</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>5M</td>
+				<td>5M/1元</td>
+				<td>电信CTCC</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>10M</td>
+				<td>10M/2元</td>
+				<td>电信CTCC</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>30M</td>
+				<td>30M/5元</td>
+				<td>电信CTCC</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>50M</td>
+				<td>50M/7元</td>
+				<td>电信CTCC</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>100M</td>
+				<td>100M/10元</td>
+				<td>电信CTCC</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>200M</td>
+				<td>200M/15元</td>
+				<td>电信CTCC</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>500M</td>
+				<td>500M/30元</td>
+				<td>电信CTCC</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>1G</td>
+				<td>1G/50元</td>
+				<td>电信CTCC</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>50M</td>
+				<td>50M/6元</td>
+				<td>联通CUCC</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>200M</td>
+				<td>200M/15元</td>
+				<td>联通CUCC</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>10M</td>
+				<td>10M/3元</td>
+				<td>移动CMCC</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>30M</td>
+				<td>30M/5元</td>
+				<td>移动CMCC</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>70M</td>
+				<td>70M/10元</td>
+				<td>移动CMCC</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>150M</td>
+				<td>150M/20元</td>
+				<td>移动CMCC</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>500M</td>
+				<td>500M/30元</td>
+				<td>移动CMCC</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td>1G</td>
+				<td>1G/50元</td>
+				<td>移动CMCC</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td>2G</td>
+				<td>2G/70元</td>
+				<td>移动CMCC</td>
+				<td>70</td>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td>3G</td>
+				<td>3G/100元</td>
+				<td>移动CMCC</td>
+				<td>100</td>
+			</tr>
+			<tr>
+				<td>19</td>
+				<td>4G</td>
+				<td>4G/130元</td>
+				<td>移动CMCC</td>
+				<td>130</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>6G</td>
+				<td>6G/180元</td>
+				<td>移动CMCC</td>
+				<td>180</td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td>11G</td>
+				<td>11G/280元</td>
+				<td>移动CMCC</td>
+				<td>280</td>
+			</tr>
+			<tr>
+				<td>24</td>
+				<td>20M</td>
+				<td>20M/3元</td>
+				<td>联通CUCC</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>25</td>
+				<td>100M</td>
+				<td>100M/10元</td>
+				<td>联通CUCC</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>26</td>
+				<td>500M</td>
+				<td>500M/30元</td>
+				<td>联通CUCC</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>27</td>
+				<td>100M</td>
+				<td>100M/10元</td>
+				<td>移动CMCC</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>28</td>
+				<td>300M</td>
+				<td>300M/20元</td>
+				<td>移动CMCC</td>
+				<td>20</td>
+			</tr>
+		</table>
+	</div>
+	
+</div>
+
+<div class="common-box-style" style="width: 450px; margin-left: 480px; height: 855px;">
+	<div class="divTitle">乐免流量套餐详情</div>
+	<div class="divContent">
+		<table class="commonTable" style="width: 400px;">
+			<tr>
+				<td>运营商</td>
+				<td>流量编码</td>
+				<td>流量值</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>10</td>
+				<td>10M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>30</td>
+				<td>30M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>70</td>
+				<td>70M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>150</td>
+				<td>150M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>500</td>
+				<td>500M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>1024</td>
+				<td>1024M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>2048</td>
+				<td>2048M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>3072</td>
+				<td>3072M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>4096</td>
+				<td>4096M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>6144</td>
+				<td>6144M</td>
+			</tr>
+			<tr>
+				<td>移动</td>
+				<td>11264</td>
+				<td>11264M</td>
+			</tr>
+			
+			<tr>
+				<td>联通</td>
+				<td>20</td>
+				<td>20M</td>
+			</tr>
+			<tr>
+				<td>联通</td>
+				<td>50</td>
+				<td>50M</td>
+			</tr>
+			<tr>
+				<td>联通</td>
+				<td>100</td>
+				<td>100M</td>
+			</tr>
+			<tr>
+				<td>联通</td>
+				<td>200</td>
+				<td>200M</td>
+			</tr>
+			<tr>
+				<td>联通</td>
+				<td>500</td>
+				<td>500M</td>
+			</tr>
+			
+			<tr>
+				<td>电信</td>
+				<td>5</td>
+				<td>5M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>10</td>
+				<td>10M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>30</td>
+				<td>30M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>50</td>
+				<td>50M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>100</td>
+				<td>100M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>200</td>
+				<td>200M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>500</td>
+				<td>500M</td>
+			</tr>
+			<tr>
+				<td>电信</td>
+				<td>500</td>
+				<td>1024M</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+</body>
+</html>

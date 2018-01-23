@@ -1,0 +1,504 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.gw.das</groupId>
+	<artifactId>das_api</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+
+	<name>das_api</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- 自定义变量 -->
+	<!-- 自定义变量引用${junit.version} -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.version>1.0.0</project.version>
+		<netty.version>4.1.9.Final</netty.version>
+		<elasticsearch.version>5.3.0</elasticsearch.version>
+	</properties>
+  
+	<!-- 全局依赖 -->
+	<dependencies>
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<!-- log -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<!-- commons -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- 加密包 -->
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		<!-- json相关 -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.45</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-jaxb-annotations</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<!-- 一套文本处理工具 -->
+		<dependency>
+			<groupId>oro</groupId>
+			<artifactId>oro</artifactId>
+			<version>2.0.8</version>
+		</dependency>
+
+		<!-- 文件处理包 -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!-- c3p0 -->
+	    <dependency>
+		    <groupId>c3p0</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.1.2</version>
+		</dependency>
+		
+		<!-- jar统一在此引用-start -->
+
+		<!-- org.apache.tomcat -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-servlet-api</artifactId>
+			<version>7.0.63</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jsp-api</artifactId>
+			<version>7.0.63</version>
+		</dependency>
+		<!-- org.springframework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+
+		<!-- org.springframework.security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-acl</artifactId>
+			<version>3.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>3.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+			<version>3.1.7.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.taglibs</groupId>
+			<artifactId>taglibs-standard-spec</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.taglibs</groupId>
+			<artifactId>taglibs-standard-impl</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+
+		<!-- email有关 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<!-- freemarker有关 -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.22</version>
+		</dependency>
+
+		<!-- cxf -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+
+		<!-- netty有关 -->
+	    <dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-transport-native-epoll</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-common</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-codec</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-buffer</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-transport</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-handler</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-codec-http</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.netty</groupId>
+		    <artifactId>netty-all</artifactId>
+		    <version>${netty.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>4.0.38</version>
+		</dependency>
+	
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming-flume_2.10</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+		
+		<!-- impala相关jar -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hive</groupId>
+			<artifactId>hive-jdbc</artifactId>
+			<version>0.13.0</version>
+		</dependency>
+		
+		<!-- HBase相关jar -->
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-client</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jdk.tools</groupId>
+			<artifactId>jdk.tools</artifactId>
+			<version>1.7</version>
+			<scope>system</scope>
+			<systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+		</dependency>
+		
+		<!-- postgresql相关jar -->
+		<dependency>
+		    <groupId>org.jumpmind.symmetric.jdbc</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>9.2-1002-jdbc4</version>
+		</dependency>
+		<!-- jar统一在此引用-end -->
+        <dependency> 
+             <groupId>org.apache.hadoop</groupId> 
+             <artifactId>hadoop-hdfs</artifactId> 
+             <version>2.2.0</version> 
+        </dependency>
+        
+        <dependency>
+		    <groupId>org.elasticsearch.client</groupId>
+		    <artifactId>transport</artifactId>
+		    <version>${elasticsearch.version}</version>
+		    
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-to-slf4j</artifactId>
+		    <version>2.7</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.elasticsearch</groupId>
+		    <artifactId>elasticsearch</artifactId>
+		    <version>${elasticsearch.version}</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<!-- 全局plugins -->
+	<build>
+		<plugins>
+			<!-- org.apache.maven.plugins -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

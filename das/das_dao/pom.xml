@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.gw.das</groupId>
+		<artifactId>das</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../das/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>das_dao</artifactId>
+	<name>das_dao</name>
+	<url>http://maven.apache.org</url>
+	
+	<!-- 加入依赖 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.gw.das</groupId>
+			<artifactId>das_common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.31</version>
+		</dependency>
+		
+		<!-- c3p0 -->
+	    <dependency>
+		    <groupId>c3p0</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.1.2</version>
+		</dependency>
+		
+		<!-- hibernate集成 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+		<dependency>
+	        <groupId>antlr</groupId>
+	        <artifactId>antlr</artifactId>
+	        <version>2.7.7</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>dom4j</groupId>
+	        <artifactId>dom4j</artifactId>
+	        <version>1.6.1</version>
+	    </dependency>
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>4.1.4.Final</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-entitymanager</artifactId>
+    		<version>4.1.4.Final</version>
+		</dependency>
+		<dependency>
+	        <groupId>org.hibernate.javax.persistence</groupId>
+	        <artifactId>hibernate-jpa-2.0-api</artifactId>
+	        <version>1.0.1.Final</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.javassist</groupId>
+	        <artifactId>javassist</artifactId>
+	        <version>3.15.0-GA</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.jboss.logging</groupId>
+	        <artifactId>jboss-logging</artifactId>
+	        <version>3.1.0.GA</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.jboss.spec.javax.transaction</groupId>
+	        <artifactId>jboss-transaction-api_1.1_spec</artifactId>
+	        <version>1.0.0.Final</version>
+	    </dependency>
+		<dependency>
+	        <groupId>javax</groupId>
+	        <artifactId>javaee-api</artifactId>
+	        <version>6.0</version>
+	        <scope>provided</scope>
+	    </dependency>
+		
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument-tomcat</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-struts</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc-portlet</artifactId>
+			<version>3.2.11.RELEASE</version>
+		</dependency>
+		
+		
+	</dependencies>
+
+</project>

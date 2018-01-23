@@ -1,0 +1,280 @@
+/* @wayne : easyui-对应样式重写或新增 */
+@charset "utf-8";
+.icon-add{
+	background:url('../../img/icons/add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('../../img/icons/edit.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('../../img/icons/remove.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('../../img/icons/reload.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('../../img/icons/refresh.png') no-repeat center center;
+}
+.icon-export{
+	background:url('../../img/icons/export.png') no-repeat center center;
+}
+.icon-upload{
+	background:url('../../img/icons/upload.png') no-repeat center center;
+}
+.icon-download{
+	background:url('../../img/icons/download.png') no-repeat center center;
+}
+.icon-view{
+	background:url('../../img/icons/view.png') no-repeat center center;
+}
+.icon-empty{
+	background:url('../../img/icons/empty.png') no-repeat center center;
+}
+.icon-list{
+	background:url('../../img/icons/list.png') no-repeat center center;
+}
+.icon-grant{
+	background:url('../../img/icons/grant.png') no-repeat center center;
+}
+.icon-menu{
+	background:url('../../img/icons/menu.png') no-repeat center center;
+}
+.icon-search{
+	background:url('../../img/icons/search.png') no-repeat center center;
+}
+.icon-searchForm{
+	background:url('../../img/icons/searchForm.png') no-repeat center center;
+}
+.icon-folder{
+/* 	background:url('../../img/icons/folder.png') no-repeat center center; */
+	background:url('../../img/menu/ic2.png') no-repeat center center;
+}
+/**更多条件*/
+.icon-searchCon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../img/icons/i_data.png) 0 0 no-repeat;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+.accordion-header-selected .icon-folder{
+	background:url('../../img/menu/ic2.png') no-repeat center center;
+}
+.tree-folder{
+	background: url('../../img/icons/tree_folder.gif') no-repeat center center;
+}
+.tree-folder-open{
+	background: url('../../img/icons/tree_folder_open.gif') no-repeat center center;
+}
+.tree-file {
+	background: url('../../img/icons/tree_file.gif') no-repeat center center;
+}
+
+.accordion-collapse {
+	background: url('../../third/jquery-easyui-1.4.5/themes/bootstrap/images/combo_arrow.png') no-repeat center center;
+}
+.accordion-expand {
+	background: url('../../third/jquery-easyui-1.4.5/themes/bootstrap/images/combo_arrow.png') no-repeat center center;
+}
+.layout-button-up {
+    background: url('../../third/jquery-easyui-1.4.5/themes/bootstrap/images/combo_arrow.png') no-repeat center center;
+}
+.layout-button-down {
+    background: url('../../third/jquery-easyui-1.4.5/themes/bootstrap/images/combo_arrow.png') no-repeat center center;
+}
+.layout-expand .panel-header {
+    border-width: 0px;
+}
+
+/**easyui-combobox 宽度设置*/
+.easyui-combobox {
+	width: 156px;
+	height: 24px;
+}
+
+/**easyui-accordion 高度设置*/
+#menuAccordion .tree-node {
+	padding-left:35px;
+	margin:2px 0;
+    height:32px;
+    line-height:32px;
+    color: #0088CC;
+    font-weight: normal;
+    position: relative;
+}
+#menuAccordion .tree li:hover{background:#fff}
+
+#menuAccordion .tree-node-selected {
+    font-weight: bold;
+    background:#fff;
+    color:#257DB8;
+}
+#menuAccordion .tree-node-selected .tree-title{color:#257DB8;}
+#menuAccordion .tree-expanded,
+#menuAccordion .tree-collapsed,
+#menuAccordion .tree-folder,
+#menuAccordion .tree-file,
+#menuAccordion .tree-checkbox,
+#menuAccordion .tree-indent {
+    display: inline-block;
+    width: 0px;
+    height: 28px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+#menuAccordion .tree-file::before {
+	content:"";
+	display: block;
+    width: 10px;
+    position: absolute;
+    z-index: 1;
+    left: 25px;
+    top: 14px;
+    border: 1px dotted;
+    border-width: 1px 0 0;
+    border-color: #ccc;
+}
+#menuAccordion .tree-file {
+	border-style: dotted;
+    border-width: 0 0px 0px 0;
+    border-color: #ccc;
+}
+#menuAccordion .tree-title {
+    font-size: 13px;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    padding: 0 2px;
+    height: 32px;
+    line-height: 32px;
+    color:#666;
+}
+#menuAccordion .panel-title{
+  color: #444;
+  font-weight: bold;
+  font-size:14px;
+  height: 22px;
+  line-height: 22px;
+}
+#menuAccordion .panel-with-icon {
+  padding-left:35px;
+}
+#menuAccordion.accordion .accordion-header-selected .panel-title {
+  color: #444;
+  font-weight: bold;
+}
+#menuAccordion .panel-icon {
+  	left:19px;
+	width: 16px;
+}
+#menuAccordion.accordion .accordion-header {
+	background:none;
+	border-bottom:solid #E0E0E0 1px
+}
+
+#menuAccordion .panel-body {
+  	padding-bottom:15px;
+  	background:none;
+}
+#menuAccordion.accordion {
+  	background:none;
+}
+#menuAccordion.panel-noscroll {
+  	background:none;
+}
+
+.tree{margin:5px 0}
+
+.panel-header {
+}
+
+.window {
+}
+
+.tabs-container {
+    overflow: inherit;
+}
+.tabs, .tabs-scroller-left, .tabs-scroller-right, .tabs-header, .tabs-tool {
+    background-color: #F5F5F5;
+    border-color: #E9EDF1;
+    border-radius: 4px;
+}
+
+.tabs li a.tabs-inner {
+}
+.tabs li.tabs-selected a.tabs-inner {
+}
+
+.datagrid-header, .datagrid-toolbar, .datagrid-pager, .datagrid-footer-inner {
+}
+.datagrid-header, .datagrid-td-rownumber {
+}
+.l-btn,
+.l-btn-disabled:hover {
+  color: #404040;
+}
+
+/**easyui-datagrid 文字自动换行*/
+table.datagrid-btable tr.datagrid-row td div.datagrid-cell{
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+/**easyui-datagrid 文字颜色*/
+.datagrid-btable .l-btn-plain {
+  border-width: 0;
+  padding: 0px;
+}
+.datagrid-row-selected .l-btn-plain {
+	background: #0081c2;
+	color: #fff;
+}
+.datagrid-row-selected .l-btn-plain:hover {
+	background: #0081c2;
+	color: #fff;
+}
+.datagrid-row-selected span{
+	color: #fff;
+}
+
+/**easyui-datagrid 行高*/
+.datagrid-header-row,
+.datagrid-row {
+  height: 29px;
+}
+/**easyui-footer 行高*/
+.datagrid-view1 .datagrid-body-inner {
+    padding-bottom: 0px;
+}
+
+/**easy ui-去除radius*/
+.textbox {
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+}
+.textbox .textbox-text {
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+}
+
+/**easy ui 没有记录样式*/
+.datagrid-empty {
+	height: 29px;
+    line-height: 29px;
+    text-align: left;
+    padding-left: 33px;
+    color: red;
+}
+.tabs-scroller-left {
+	border-left-width: 0;
+}
+.tabs-scroller-right {
+	border-right-width: 0;
+}
+
